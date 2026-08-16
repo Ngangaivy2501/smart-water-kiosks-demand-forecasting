@@ -11,6 +11,7 @@ Smart water kiosks use prepaid cards to record water transactions, including the
 This project applies data analysis and machine learning techniques to identify demand patterns and develop a model that can help predict water demand and support more efficient refill scheduling.
 
 
+
 Objectives
 
 The main objectives of this project are to:
@@ -22,6 +23,8 @@ The main objectives of this project are to:
 - Develop and compare machine learning models for demand prediction.
 - Identify the most suitable model for predicting liters of water sold.
 - Provide insights that can support improved kiosk refill scheduling.
+
+
 
 Dataset
 
@@ -47,11 +50,17 @@ Key variables include:
 - Day of the week
 - Month
 
-The target variable used for the final regression model is:
+Target Variable
+
+The final regression model uses:
 
 "liters_sold"
 
-Data Preparation
+as the target variable.
+
+
+
+ Data Preparation
 
 The dataset was prepared before modeling through several preprocessing steps, including:
 
@@ -63,7 +72,9 @@ The dataset was prepared before modeling through several preprocessing steps, in
 - Preparing numerical features for machine learning
 - Splitting the data into training and testing sets
 
-Exploratory Data Analysis
+
+
+ Exploratory Data Analysis
 
 Exploratory Data Analysis was performed to understand relationships and patterns within the data.
 
@@ -74,9 +85,11 @@ Visualizations included:
 - Correlation heatmaps
 - Sales and demand trends
 - Categorical frequency plots
-- Branch/location comparisons
+- Branch and location comparisons
 
 These visualizations helped identify important patterns and relationships between water demand and operational, environmental, and temporal factors.
+
+
 
 Machine Learning
 
@@ -84,20 +97,17 @@ Several regression approaches were considered for predicting water demand.
 
 The final project focused on Random Forest Regression because of its ability to model complex relationships between multiple features and the target variable.
 
-Final Target
+Final Model
 
-"liters_sold"
-
-Model
-
-Random Forest Regressor
+Optimized Random Forest Regressor
 
 The model was trained using operational, environmental, temporal, and categorical features.
 
 Model evaluation was performed using unseen test data to assess how well the model could generalize to new observations.
 
 
- Random Forest Features
+
+Random Forest Features
 
 The final model incorporated features such as:
 
@@ -120,22 +130,27 @@ The final model incorporated features such as:
 - Day of the week
 - Month
 
-Results
+---
 
-The developed model demonstrated the potential of machine learning for predicting water demand from historical kiosk data.
+Model Performance
 
-The predictions can be used to support:
+The Random Forest model was evaluated using:
 
-- Better refill scheduling
-- Reduction of stock-out situations
-- More efficient water distribution
-- Identification of high-demand periods
-- Improved operational planning
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- R² Score
 
-The project also demonstrates how historical transaction data can be transformed into actionable insights for resource management.
+The original Random Forest model was compared with an optimized version after hyperparameter tuning.
 
+Performance Comparison
 
-Technologies Used
+Metric| Original Random Forest| Optimized Random Forest
+MAE| 169.75| 163.12
+RMSE| 400.01| 390.59
+R² Score| 0.9622| 0.9639
 
-- Python
-- P
+Results Interpretation
+
+The optimized Random Forest achieved:
+
+- MAE: 163.12 — the model's predictions differed from the actu
